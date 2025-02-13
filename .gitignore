@@ -1,0 +1,5 @@
+node_modules/         # If you're using Node.js
+.DS_Store             # macOS system files
+*.log                 # Log files
+/config.js            # Configuration files with sensitive data
+/secrets.js           # Files containing API keys or passwords
