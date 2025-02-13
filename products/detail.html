@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assests/css/style.css">
+    <link rel="stylesheet" href="../assests/css/gensty.css">
+    <link rel="stylesheet" href="../assests/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assests/font/fonts.css">
+    <link rel="stylesheet" href="style.scss">
+</head>
+<body>
+    <header id="header" class="site-header sticky">
+            <div class="mid-top-wrapper">
+            <img class="Logo" src="../assests/photos/trans-logo.png" width="1825" height="239"class="et_b_header-logo" alt="Logo"></img>
+            </div>
+            <div class="header-bottom-wrapper sticky">
+                <div class="header-bottom" data-title="Header bottom">
+                    <div class="et-row-container et-container">
+                        <div class="et-wrap-columns flex align-items-center">
+                            <div class="et_column et_col-xs-12 pos-static">
+                                <div class="et_element et_b_header-menu header-main-menu flex align-items-center justify-content-center et_element-top-level">
+                                    <div class="menu-main-container">
+                                        <ul id="menu-mobile-menu" class="menu">
+                                            <li class="menu-item current-menu-item"><a class="item-link" href="/index.html">Home</a></li>
+                                            <li class="menu-item"><a class="item-link" href="/shop">Shop</a></li>
+                                            <li class="menu-item"><a class="item-link" href="/VIP">VIP</a></li>
+                                            <li class="menu-item"><a class="item-link" href="./about-us">About Us</a></li>
+
+                                            <li class="menu-item"><a class="item-link" href="arabic"><span class="trp-ls-language-name">العربية</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="title">PRODUCT DETAIL</div>
+        <div class="detail">
+            <div class="image">
+                <img src="">
+            </div>
+            <div class="content">
+                <h1 class="name"></h1>
+                <div class="price"></div>
+                <div class="description"></div>
+                <span class="instructions">choose you options for the price.</span>
+                <div class="buttons">
+                    <div class="quantity-options">
+                        <label for="quantity">Quantity</label>
+                        <select id="quantity" onchange="updateRoastOptions()">
+                            <option value="0">choose</option>
+                            <option value="100">100gm</option>
+                            <option value="150">250gm</option>
+                            <option value="200">500gm</option>
+                            <option value="300">750gm</option>
+                            <option value="450">1kg</option>
+                        </select>
+                    </div>
+                    <div class="roast-options">
+                        <label for="roast">Roast</label>
+                        <select id="roast" class="form-select" onchange="updatePrice()" disabled>
+                            <option value="0">choose</option>
+                            <option value="10">Bright</option>
+                            <option value="15">Medium</option>
+                            <option value="15">Dark</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="confimation">
+                    <button class="order"><span class="default">Order</span><span class="success">Order Placed<svg viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg></span>
+                <div class="box"></div>
+                <div class="truck">
+                    <div class="back"></div>
+                    <div class="front">
+                        <div class="window"></div>
+                    </div>
+                    <div class="light top"></div>
+                    <div class="light bottom"></div>
+                </div>
+                <div class="lines"></div>
+            </button>
+        <!-- partial -->
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script src="js/priceUpdate.js"></script>
+        <script src="js/orderConf.js"></script>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="title">Similar product</div>
+        <div class="listProduct"></div>
+    </div>
+    <script>
+        let products = null;
+        let basePrice = 0;
+
+        // get datas from file json
+        fetch('../data/products.json')
+            .then(response => response.json())
+            .then(data => {
+                products = data;
+                showDetail();
+        })
+
+        function showDetail(){
+            // remove datas default from HTML
+            let detail = document.querySelector('.detail');
+            let listProduct = document.querySelector('.listProduct');
+            let productId =  new URLSearchParams(window.location.search).get('id');
+            let thisProduct = products.filter(value => value.id == productId)[0];
+
+            detail.querySelector('.image img').src = '/'+ thisProduct.image;
+            detail.querySelector('.name').innerText = thisProduct.name;
+            basePrice = thisProduct.price;
+            detail.querySelector('.price').innerText = basePrice + ' EGP';
+            detail.querySelector('.description').innerText = thisProduct.description;
+
+            (products.filter(value => value.id != productId)).forEach(product => {
+                let newProduct = document.createElement('a');
+                newProduct.href = '/products/detail.html?id=' + product.id;
+                newProduct.classList.add('item');
+                newProduct.innerHTML = 
+                `<img src="../${product.image}" alt="">
+                <h2>${product.name}</h2>
+                <div class="price">${product.price}EGP</div>`;
+                listProduct.appendChild(newProduct);
+            });
+
+        }
+    </script>
+    <script src="../assests/js/stories.js"></script>
+</body>
+</html>

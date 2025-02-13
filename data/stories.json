@@ -1,0 +1,19 @@
+{
+    "stories": [
+        {
+            "id": 0,
+            "image": "/assests/photos/ln-br/lan-br1.jpg",
+            "content": "/assests/photos/ln-br/lan-br1.jpg"
+        },
+        {
+            "id": 1,
+            "image": "/assests/photos/ln-br/lan-br2.jpg",
+            "content": "/assests/photos/ln-br/lan-br2.jpg"
+        },
+        {
+            "id": 2,
+            "image": "/assests/photos/ln-br/lan-br3.jpg",
+            "content": "/assests/photos/ln-br/lan-br3.jpg"
+        }
+    ]
+}

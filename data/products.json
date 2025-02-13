@@ -1,0 +1,128 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "plain coffe",
+        "type": "unflavoured",
+        "price": "200-300",
+        "quantity": 10,
+        "image": "assests/photos/products/test-products.png",
+        "shortdescription": "luxury coffe.",
+        "description": "very good coffe.",
+        "discount_status": true,
+        "discount": 90,
+        "actprice": "",
+        "bestSeller": true
+      },
+      {
+        "id": 2,
+        "name": "dark coffe",
+        "type": "unflavoured",
+        "price": "250-500",
+        "quantity": 10,
+        "image": "assests/photos/products/test-products.png",
+        "shortdescription": "luxury coffe.",
+        "description": "choose you options for the price.",
+        "discount_status": true,
+        "discount": 20,
+        "actprice": 100,
+        "bestSeller": true
+      },
+      {
+        "id": 3,
+        "name": "medium coffe",
+        "type": "unflavoured",
+        "price": "400-350",
+        "quantity": 10,
+        "image": "assests/photos/products/test-products.png",
+        "shortdescription": "luxury coffe.",
+        "description": "choose you options for the price.",
+        "discount_status": true,
+        "discount": 50,
+        "actprice": 100,
+        "bestSeller": true
+      },
+      {
+        "id": 4,
+        "name": " coffe",
+        "type": "unflavoured",
+        "price": "250-550",
+        "quantity": 10,
+        "image": "assests/photos/products/test-products.png",
+        "shortdescription": "luxury coffe.",
+        "description": "choose you options for the price.",
+        "discount_status": true,
+        "discount": 50,
+        "actprice": 100,
+        "bestSeller": true
+      },
+      {
+        "id": 5,
+        "name": " coffe",
+        "type": "unflavoured",
+        "price": "450-1000",
+        "quantity": 200,
+        "image": "assests/photos/products/test-products.png",
+        "shortdescription": "luxury coffe.",
+        "description": "choose you options for the price.",
+        "discount_status": true,
+        "discount": 50,
+        "actprice": 100,
+        "bestSeller": false
+      },
+      {
+        "id": 6,
+        "name": " coffe",
+        "type": "unflavoured",
+        "price": "250-550",
+        "quantity": 200,
+        "image": "assests/photos/products/test-products.png",
+        "shortdescription": "luxury coffe.",
+        "description": "choose you options for the price.",
+        "discount_status": true,
+        "discount": 50,
+        "actprice": 100,
+        "bestSeller": false
+      },
+      {
+        "id": 7,
+        "name": " coffe",
+        "type": "unflavoured",
+        "price": 200,
+        "quantity": 200,
+        "image": "assests/photos/products/test-products.png",
+        "shortdescription": "luxury coffe.",
+        "description": "choose you options for the price.",
+        "discount_status": false,
+        "discount": 50,
+        "actprice": 100,
+        "bestSeller": false
+      },
+      {
+        "id": 8,
+        "name": " coffe",
+        "type": "unflavoured",
+        "price": 200,
+        "quantity": 200,
+        "image": "assests/photos/products/test-products.png",
+        "shortdescription": "luxury coffe.",
+        "description": "choose you options for the price.",
+        "discount_status": true,
+        "discount": 50,
+        "actprice": 100,
+        "bestSeller": true
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "coffe",
+        "products": [1, 2, 3, 4, 5, 6, 7, 8]
+      },
+      {
+        "id": 2,
+        "name": "flavoured",
+        "products": [2, 4, 5, 7, 8]
+      }
+    ]
+  }

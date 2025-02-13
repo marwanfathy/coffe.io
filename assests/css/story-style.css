@@ -1,0 +1,71 @@
+
+.stories-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #cccccc;
+  align-items: center;
+  justify-content: center;
+}
+.story {
+  margin: 0 10px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid #474747;
+  transition: border 0.3s;
+
+}
+.story:hover {
+  border: 2px solid #000000;
+}
+.story img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.story.active {
+  border: 2px solid #000000;
+}
+.story-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+}
+.content-img{
+  aspect-ratio: 9/16;
+  width: 20%;
+  object-fit: cover;
+  background-size: cover;
+  border-radius: 20px;
+
+}
+.story-content.active {
+  display: flex;
+}
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  height: 810px;
+  object-fit: cover;
+  background-size: cover;
+  border-radius: 20px;
+}
